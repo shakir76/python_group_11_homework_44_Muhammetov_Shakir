@@ -8,17 +8,18 @@
     <title>Document</title>
 </head>
 <body>
-<div>
-    <p>Guess 4 numbers. Enter them separated with spaces:</p>
-    <form method="POST" action="/">
-        {% csrf_token %}
-        <input type="text" name="numbers" required/>
-        <input type="submit" value="Send"/>
-    </form>
-    {{ numbers }}
-</div>
-<br>
-<a href="history/">History</a>
+<h1>History</h1>
+{% for a in step %}
+    <h3>STEP {{a}}</h3>
+    {% for b in message %}
+        {{ b}}
+    {% endfor %}
+{% endfor %}
 
+
+
+
+<br>
+<a href="/">Back</a>
 </body>
 </html>
